@@ -1,6 +1,6 @@
 ## Development Guide
 0. Setup SSH keys. ```ssh-keygen -t ed25519 -C "munair@usefulcoin.com"```
-1. Add the public key to the list of SSH keys in your GitHub account.
+1. Add the public key to the list of SSH keys in your GitHub account. ```cat /home/ubuntu/.ssh/id_ed25519.pub```
 2. Clone the repository. ```git clone git@github.com:usefulcoin/paper-kit-react-template.git```
 3. Change the working directory and execute the setup script. ```cd paper-kit-react-template && bash setup.bash```
 4. Install node modules. ```npm install```
