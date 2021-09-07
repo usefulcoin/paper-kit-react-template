@@ -20,7 +20,9 @@ sudo apt -y install awscli > /dev/null 2>&1 && echo [$0] installed awscli APT.
 if $debug ; then sudo npm install --global yarn; fi
 sudo npm install --global yarn > /dev/null 2>&1 && echo [$0] installed Yarn.
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-source ~/.profile
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # this loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # this loads nvm bash_completion
 nvm install 12
 nvm use 12
 
