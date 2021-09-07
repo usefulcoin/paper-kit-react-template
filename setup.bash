@@ -34,17 +34,11 @@ awsversion=$(aws --version) && echo [$0] verified the installation of aws versio
 aws configure
 
 # step 4: npm up.
-# if $debug ; then npm install && npm run start ; fi
-# sudo npm install > /dev/null 2>&1 && echo [$0] npmed up.
-# npm run start
-#
-# [stuff should be compiled and hosted locally at this point]
-
-
-# additional/alternate instructions:
-# npm install react-router-dom [if required]
-# npm start
-# npm run build && aws s3 sync build/ s3://staging-usefulcoin-com [to build and host on aws]
+if $debug ; then npm install && npm audit fix && npm run start ; fi
+npm install > /dev/null 2>&1 && echo [$0] npmed up.
+npm audit fix > /dev/null 2>&1 && echo [$0] npm audit fix applied.
+npm run start # stuff should be compiled and hosted locally at this point
+# check out deploy.bash to run after checking port 3000
 
 # yarn instructions:
 # if $debug ; then yarn && yarn start ; fi
