@@ -27,4 +27,4 @@ if [ $build == "yes" ] && [ ! -d docs ]; then mv build docs ; fi
 if [ $staging == "yes" ]; then git add --all && git commit -m "bash produced commit message" && git push ; fi
 
 # step 4: copy to S3 bucket (**production**)
-if [ $production == "yes" ]; then aws s3 sync . s3://react-www-development ; fi
+if [ $production == "yes" ]; then aws s3 sync . s3://paper-kit-react-template ; fi
